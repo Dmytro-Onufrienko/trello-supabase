@@ -41,4 +41,23 @@ export class BoardService implements IDatabaseService {
       .delete()
       .match({ id: board.id });
   }
+
+  async addUserToBoard(boardId: string, email: string) {
+    const user = await this.supabase
+      .from(Table.USER)
+      .select('id')
+      .match({ email })
+      .single();
+
+    if (user.data?.id) {
+      const userId = user.data.id;
+      const userBoard = await this.supabase.from(Table.USER_BOARDS).insert({
+        user_id: userId,
+        board_id: boardId,
+      });
+      return userBoard;
+    } else {
+      return null;
+    }
+  }
 }
