@@ -1,9 +1,9 @@
 <div class="flex items-center justify-center h-screen w-screen">
-  <div class="flex flex-col items-center justify-center gap-4 bg-slate-200 rounded p-6">
+  <div class="flex flex-col items-center justify-center gap-4 bg-slate-100 rounded shadow shadow-purple-300 p-6">
     <h1 class=" text-3xl">Sign In</h1>
-    <input [(ngModel)]="email" type="email" title="email" class="rounded">
-    <input [(ngModel)]="password" type="password" title="password" class="rounded">
-    <button (click)="signIn()" class="bg-slate-400 rounded p-4">
+    <input [(ngModel)]="email" type="email" title="email" class="rounded border-purple-300">
+    <input [(ngModel)]="password" type="password" title="password" class="rounded border-purple-300">
+    <button (click)="signIn()" class="bg-purple-300 rounded p-4">
       Sign In
     </button>
   </div>
